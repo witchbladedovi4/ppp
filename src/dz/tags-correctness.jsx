@@ -1,0 +1,27 @@
+const TagsCorrectness = () => {
+  return (
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default TagsCorrectness;
