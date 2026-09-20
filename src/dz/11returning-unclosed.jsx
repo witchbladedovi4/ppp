@@ -1,5 +1,10 @@
 const ReturningUnclosed = () => {
-  return <input />;
+  return (
+    <div>
+    <input type="text" placeholder="input"/> 
+    </div>
+  )
+  
 };
 
 export default ReturningUnclosed;

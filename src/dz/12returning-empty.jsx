@@ -1,9 +1,9 @@
 const ReturningEmpty = () => {
   return (
     <>
-      <input />
-      <input />
-      <input />;
+      <input type="text" placeholder="input"/>
+      <input type="text" placeholder="input"/>
+      <input type="text" placeholder="input"/>;
     </>
   );
 };

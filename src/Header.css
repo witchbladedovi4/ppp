@@ -1,0 +1,53 @@
+/* === Стили для Header === */
+.header {
+  background-color: #282c34;
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.header h1 {
+  color: white;
+  margin: 0;
+  font-size: 24px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; /* перенос на новую строку, если не влезает */
+}
+
+.nav-list a {
+  color: #61dafb;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  display: block;
+}
+
+.nav-list a:hover {
+  background-color: rgba(97, 218, 251, 0.1);
+  text-decoration: none;
+}
+
+.content {
+  width: 1000px;
+  margin: 20px auto;
+  
+}

@@ -6,7 +6,7 @@ const ReturningDown = () => {
         <li>text2</li>
         <li>text3</li>
       </ul>
-      ;
+      
     </>
   );
 };

@@ -11,7 +11,7 @@ const ReturningSeveral = () => {
         <li>text2</li>
         <li>text3</li>
       </ul>
-      ;
+      
     </>
   );
 };
