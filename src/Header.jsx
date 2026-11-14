@@ -23,6 +23,14 @@ function Header() {
             <li><Link to="/TagsMultiLine">Tags MultiLine</Link></li>
             <li><Link to="/TagsClosing">Tags Closing</Link></li>
             <li><Link to="/TagsCorrectness">Tags Correctness</Link></li>
+            <li><Link to="/SelectIntro">Select Intro</Link></li>
+            <li><Link to="/SelectArray">Select Array</Link></li>
+            <li><Link to="/SelectValue">Select Value</Link></li>
+            <li><Link to="/SelectArrayValue">Select Array-value</Link></li>
+            <li><Link to="/FormsRadio">Forms Radio</Link></li>
+            <li><Link to="/FormsDefaultValues">Forms Default-values</Link></li>
+            <li><Link to="/FormsArrayInputsBinding">Forms Array Inputs Binding</Link></li>
+            <li><Link to="/FormsObjectInputsBinding">Forms Object Inputs Binding</Link></li>
           </ul>
         </nav>
       </div>

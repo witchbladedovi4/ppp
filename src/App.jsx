@@ -16,6 +16,14 @@ import TagsCorrectness from "./dz/tags-correctness";
 
 import Header from "./Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SelectIntro from "./dz/64select-intro";
+import SelectArray from "./dz/65select-array";
+import SelectValue from "./dz/66select-value";
+import SelectArrayValue from "./dz/67select-array-value";
+import FormsRadio from "./dz/68forms-radio";
+import FormsDefaultValues from "./dz/69forms-default-values";
+import FormsArrayInputsBinding from "./dz/70-forms-array-inputs-binding";
+import FormsObjectInputsBinding from "./dz/71forms-object-inputs-binding";
 
 function App() {
   return (
@@ -43,6 +51,14 @@ function App() {
           <Route path="/TagsMultiLine" element={<TagsMultiLine />} />
           <Route path="/TagsClosing" element={<TagsClosing />} />
           <Route path="/TagsCorrectness" element={<TagsCorrectness />} />
+          <Route path="/SelectIntro" element={<SelectIntro />} />
+          <Route path="/SelectArray" element={<SelectArray />} />
+          <Route path="/SelectValue" element={<SelectValue />} />
+          <Route path="/SelectArrayValue" element={<SelectArrayValue />} />
+          <Route path="/FormsRadio" element={<FormsRadio />} />
+          <Route path="/FormsDefaultValues" element={<FormsDefaultValues />} />
+          <Route path="/FormsArrayInputsBinding" element={<FormsArrayInputsBinding />} />
+          <Route path="/FormsObjectInputsBinding" element={<FormsObjectInputsBinding />} />
         </Routes>
       </div>
     </BrowserRouter>
