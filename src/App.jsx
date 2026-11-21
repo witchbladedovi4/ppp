@@ -27,10 +27,14 @@ import FormsObjectInputsBinding from "./dz/71forms-object-inputs-binding";
 
 import Header from "./Header";
 import navItems from "./navigation";
+import DataIntro from "./dz/72data-intro";
+import DataArrayAdding from "./dz/73data-array-adding";
+import DataArrayOperations from "./dz/74data-array-operations";
+import DataObjectsArrayAdding from "./dz/75data-objects-array-adding";
+import DataObjectsArrayOperations from "./dz/76-data-objects-array-operations";
+import DataShowing from "./dz/77data-showing";
 
-const pageMeta = Object.fromEntries(
-  navItems.map((item) => [item.path, item])
-);
+const pageMeta = Object.fromEntries(navItems.map((item) => [item.path, item]));
 
 function AppLayout() {
   const location = useLocation();
@@ -101,6 +105,21 @@ function AppLayout() {
                 path="/FormsObjectInputsBinding"
                 element={<FormsObjectInputsBinding />}
               />
+              <Route path="/DataIntro" element={<DataIntro />} />
+              <Route path="/DataArrayAdding" element={<DataArrayAdding />} />
+              <Route
+                path="/DataArrayOperations"
+                element={<DataArrayOperations />}
+              />
+              <Route
+                path="/DataObjectsArrayAdding"
+                element={<DataObjectsArrayAdding />}
+              />
+              <Route
+                path="/DataObjectsArrayOperations"
+                element={<DataObjectsArrayOperations />}
+              />
+              <Route path="/DataShowing" element={<DataShowing />} />
             </Routes>
           </div>
         </section>

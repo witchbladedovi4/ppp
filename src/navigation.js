@@ -38,6 +38,36 @@ const navItems = [
     label: "Forms Object Inputs Binding",
     number: "71",
   },
+  {
+    path: "/DataIntro",
+    label: "Data Intro",
+    number: "72",
+  },
+  {
+    path: "/DataArrayAdding",
+    label: "Data Array Adding",
+    number: "73",
+  },
+  {
+    path: "/DataArrayOperations",
+    label: "Data Array Operations",
+    number: "74",
+  },
+  {
+    path: "/DataObjectsArrayAdding",
+    label: "Data Objects Array Adding",
+    number: "75",
+  },
+  {
+    path: "/DataObjectsArrayOperations",
+    label: "Data Objects Array Operations",
+    number: "76",
+  },
+  {
+    path: "/DataShowing",
+    label: "Data Showing",
+    number: "77",
+  },
 ];
 
 export default navItems;
