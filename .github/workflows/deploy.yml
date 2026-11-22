@@ -28,4 +28,5 @@ jobs:
         with:
           folder: build
           branch: gh-pages
+          token: ${{ secrets.GH_TOKEN }}
           clean: true
