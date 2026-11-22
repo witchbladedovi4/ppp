@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 const FormsDefaultValues = () => {
-  const [value, setValue] = useState("вова9mine");
-  const [checked, setChecked] = useState(true);
+  const [value] = useState("вова9mine");
+  const [checked] = useState(true);
 
   return <div>
     		<input defaultValue={value} />
