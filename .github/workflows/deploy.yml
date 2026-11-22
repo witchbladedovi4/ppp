@@ -1,32 +1,48 @@
-name: Deploy React to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["master"] # Проверь название своей ветки!
+    branches: ["master"] # Проверь, main у тебя или master
+
+# Разрешаем только один деплой за раз
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Node.js ⚙️
+      
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-
-      - name: Install dependencies 📦
+          cache: 'npm'
+      
+      - name: Install dependencies
         run: npm install
-
-      - name: Build project 🏗️
-        run: npm run build
-
-      - name: Deploy to GitHub Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      
+      - name: Build project
+        run: CI=false npm run build # CI=false игнорирует предупреждения
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: build
-          branch: gh-pages
-          token: ${{ secrets.GH_TOKEN }}
-          clean: true
+          path: ./build
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write      # Право писать на страницы
+      id-token: write   # Право создавать токен для проверки
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
