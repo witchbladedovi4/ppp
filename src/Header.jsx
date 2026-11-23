@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import navItems from "./navigation";
+import navItems, { taskGroups } from "./navigation";
 import "./Header.css";
 
 function Header() {
@@ -198,24 +198,56 @@ function Header() {
               <span className="task-menu-badge">{navItems.length}</span>
             </div>
 
-            <ul className="task-menu-list">
-              {navItems.map((item) => (
-                <li key={item.path}>
-                  <NavLink
-                    to={item.path}
-                    onClick={() => setMenuOpen(false)}
-                    className={({ isActive }) =>
-                      `task-menu-link${
-                        isActive || isCurrentPath(item.path) ? " active" : ""
-                      }`
-                    }
-                  >
-                    <span className="task-menu-name">{item.label}</span>
-                    <span className="task-menu-number">{item.number}</span>
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
+            <div className="task-menu-groups">
+              {taskGroups.map((group) => {
+                const groupItems = navItems.filter((item) => {
+                  const number = Number(item.number);
+                  return number >= group.from && number <= group.to;
+                });
+
+                return (
+                  <section className="task-menu-group" key={group.title}>
+                    <div className="task-menu-group-head">
+                      <h3 className="task-menu-group-title">
+                        {group.title}
+                      </h3>
+                      <span className="task-menu-group-count">
+                        {groupItems.length}
+                      </span>
+                    </div>
+
+                    {groupItems.length > 0 ? (
+                      <ul className="task-menu-list">
+                        {groupItems.map((item) => (
+                          <li key={item.path}>
+                            <NavLink
+                              to={item.path}
+                              onClick={() => setMenuOpen(false)}
+                              className={({ isActive }) =>
+                                `task-menu-link${
+                                  isActive || isCurrentPath(item.path)
+                                    ? " active"
+                                    : ""
+                                }`
+                              }
+                            >
+                              <span className="task-menu-name">
+                                {item.label}
+                              </span>
+                              <span className="task-menu-number">
+                                {item.number}
+                              </span>
+                            </NavLink>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="task-menu-empty">Пока нет заданий</p>
+                    )}
+                  </section>
+                );
+              })}
+            </div>
           </div>
         )}
 

@@ -1,0 +1,16 @@
+const ConditionsIntro = () => {
+  let text;
+	const show = true;
+	
+	if (show) {
+		text = <p>text1</p>;
+	} else {
+		text = <p>text2</p>;
+	}
+	
+	return <div>
+		{text}
+	</div>;
+}
+
+export default ConditionsIntro

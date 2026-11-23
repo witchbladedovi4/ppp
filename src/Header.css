@@ -268,6 +268,61 @@
   border-radius: 11px;
 }
 
+.task-menu-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 10px;
+}
+
+.task-menu-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 2px 6px 5px;
+}
+
+.task-menu-group-title {
+  margin: 0;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.task-menu-group-count {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  min-width: 24px;
+  height: 22px;
+  padding: 0 7px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  background: rgba(108, 92, 231, 0.08);
+  border: 1px solid rgba(108, 92, 231, 0.12);
+  border-radius: 7px;
+}
+
+.task-menu-group .task-menu-list {
+  padding: 0;
+}
+
+.task-menu-empty {
+  margin: 0;
+  padding: 7px 10px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: rgba(38, 42, 76, 0.025);
+  border: 1px dashed rgba(38, 42, 76, 0.1);
+  border-radius: 9px;
+}
+
 .task-menu-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

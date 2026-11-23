@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const SelectIntro = () => {
+const FormsSelectIntro = () => {
   const [value, setValue] = useState('');
 
   function handleChange(event) {
@@ -20,4 +20,4 @@ const SelectIntro = () => {
   );
 };
 
-export default SelectIntro;
+export default FormsSelectIntro;

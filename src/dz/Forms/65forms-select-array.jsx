@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SelectArray = () => {
+const FormsSelectArray = () => {
   const texts = ["Выберите город","Екатеринбург", "Moscow", "Абубааби", "Таганрог"];
   const [value, setValue] = useState("");
   const photo = "https://i.pinimg.com/originals/64/2f/75/642f757d7ff814c5ebef2c1f68ddf1b9.jpg"
@@ -25,4 +25,4 @@ const SelectArray = () => {
   );
 };
 
-export default SelectArray;
+export default FormsSelectArray;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const SelectValue = () => {
+const FormsSelectValue = () => {
   	const [value, setValue] = useState('');
 
   return (
@@ -51,4 +51,4 @@ const SelectValue = () => {
   )
 }
 
-export default SelectValue
+export default FormsSelectValue
