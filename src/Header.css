@@ -275,12 +275,32 @@
   padding: 10px;
 }
 
-.task-menu-group-head {
+.task-menu-group-toggle {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  padding: 2px 6px 5px;
+  width: 100%;
+  margin: 0 0 4px;
+  padding: 7px 8px;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.task-menu-group-toggle:hover {
+  background: var(--surface-soft);
+  border-color: rgba(108, 92, 231, 0.1);
+}
+
+.task-menu-group-toggle:focus-visible {
+  outline: 2px solid rgba(108, 92, 231, 0.65);
+  outline-offset: 1px;
 }
 
 .task-menu-group-title {
@@ -290,6 +310,31 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+.task-menu-group-toggle:hover .task-menu-group-title,
+.task-menu-group.is-open .task-menu-group-title {
+  color: var(--accent);
+}
+
+.task-menu-group-meta {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.task-menu-group-chevron {
+  width: 14px;
+  height: 14px;
+  color: var(--muted);
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.2s ease;
+}
+
+.task-menu-group.is-open .task-menu-group-chevron {
+  color: var(--accent);
+  transform: rotate(180deg);
 }
 
 .task-menu-group-count {
@@ -306,6 +351,15 @@
   background: rgba(108, 92, 231, 0.08);
   border: 1px solid rgba(108, 92, 231, 0.12);
   border-radius: 7px;
+}
+
+.task-menu-group-body {
+  display: none;
+}
+
+.task-menu-group-body.is-open {
+  display: block;
+  animation: task-group-in 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .task-menu-group .task-menu-list {
@@ -493,6 +547,17 @@
   }
 }
 
+@keyframes task-group-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 720px) {
   .header-container {
     gap: 10px;
@@ -550,7 +615,10 @@
   .task-menu-icon,
   .task-menu-chevron,
   .task-menu-link,
-  .task-menu-panel {
+  .task-menu-panel,
+  .task-menu-group-toggle,
+  .task-menu-group-chevron,
+  .task-menu-group-body {
     transition: none;
     animation: none;
   }

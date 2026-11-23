@@ -361,7 +361,55 @@ const navItems = [
     lessonUrl:
       "https://code.mu/ru/javascript/framework/react/book/prime/forms/input/intro/",
   },
-
+  {
+    path: "/FormsInputOutput",
+    label: "Forms Input Output",
+    number: "57",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/forms/input/output/",
+  },
+  {
+    path: "/FormsInputFunction",
+    label: "Forms Input Function",
+    number: "58",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/forms/input/function/",
+  },
+  {
+    path: "/FormsInputSeveral",
+    label: "Forms Input Several",
+    number: "59",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/forms/input/several/",
+  },
+  {
+    path: "/FormsData",
+    label: "Forms Data",
+    number: "60",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/forms/data/",
+  },
+  {
+    path: "/FormsTextarea",
+    label: "Forms Textarea",
+    number: "61",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/forms/textarea/",
+  },
+  {
+    path: "/FormsCheckbox",
+    label: "Forms Checkbox",
+    number: "62",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/forms/checkbox/intro/",
+  },
+  {
+    path: "/CheckboxConditionalRendering",
+    label: "Forms Checkbox Conditional Rendering",
+    number: "63",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/forms/checkbox/conditional-rendering/",
+  },
 
   {
     path: "/FormsSelectIntro",
@@ -460,6 +508,97 @@ const navItems = [
     number: "77",
     lessonUrl:
       "https://code.mu/ru/javascript/framework/react/book/prime/data/showing/",
+  },
+  {
+    path: "/ComponentsIntro",
+    label: "Components Intro",
+    number: "78",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/components/intro/",
+  },
+  {
+    path: "/ComponentsUsing",
+    label: "Components Using",
+    number: "79",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/components/using/",
+  },
+  {
+    path: "/ComponentsMultipleInstances",
+    label: "Components Multiple Instances",
+    number: "80",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/components/multiple-instances/",
+  },
+  {
+    path: "/ComponentsProps",
+    label: "Components Props",
+    number: "81",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/components/props/",
+  },
+  {
+    path: "/ComponentsChild",
+    label: "Components Child",
+    number: "82",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/components/child/",
+  },
+  {
+    path: "/ComponentsChildArray",
+    label: "Components Child Array",
+    number: "83",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/components/child-array/",
+  },
+  {
+    path: "/ComponentsChildLoop",
+    label: "Components Child Loop",
+    number: "84",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/components/child-loop/",
+  },
+  {
+    path: "/ComponentsPassingStates",
+    label: "Components Passing States",
+    number: "85",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/components/passing-states/",
+  },
+  {
+    path: "/ComponentsPassingId",
+    label: "Components Passing Id",
+    number: "86",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/components/passing-id/",
+  },
+  {
+    path: "/ComponentsChangingParentState",
+    label: "Components Changing ParentState",
+    number: "87",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/components/changing-parent-state/",
+  },
+  {
+    path: "/ComponentsEditingParentState",
+    label: "Components Editing ParentState",
+    number: "88",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/components/editing-parent-state/",
+  },
+  {
+    path: "/ComponentsEditingGrandparentState",
+    label: "Components Editing Grandparent State",
+    number: "89",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/components/editing-grandparent-state/",
+  },
+  {
+    path: "/ComponentsModesViaStates",
+    label: "Components Modes Via States",
+    number: "90",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/prime/components/modes-via-states/",
   },
 ];
 

@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const IdFunctionWrongUsing = () => {
   return (
-    <div>Неправильно генерировать id прямо в атрибуте o_O</div>
-  )
-}
+    <div className="demo-warning">
+      Неправильно генерировать id прямо в атрибуте o_O
+    </div>
+  );
+};
 
-export default IdFunctionWrongUsing
+export default IdFunctionWrongUsing;

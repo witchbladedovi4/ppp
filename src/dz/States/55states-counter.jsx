@@ -11,9 +11,9 @@ const StatesCounter = () => {
   };
 
   return (
-    <div>
+    <div className="counter-demo">
       <button onClick={handleClick2}>-</button>
-      <span>{count}</span>
+      <span className="counter-value">{count}</span>
       <button onClick={handleClick}>+</button>
     </div>
   );

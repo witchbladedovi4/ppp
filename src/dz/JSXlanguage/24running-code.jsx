@@ -4,10 +4,10 @@ const RunningCode = () => {
   const name = "John";
   const surname = "Doe";
   return (
-    <div>
-      result:{num1 + num2}
-      name:{name + " " + surname}
-      result:{Math.round(Math.sqrt(num2))}
+    <div className="demo-results">
+      <span>result: {num1 + num2}</span>
+      <span>name: {name + " " + surname}</span>
+      <span>result: {Math.round(Math.sqrt(num2))}</span>
     </div>
   );
 };

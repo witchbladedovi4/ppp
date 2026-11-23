@@ -21,10 +21,10 @@ const FormingTable = () => {
     <table>
       <thead>
         <tr>
-          <td>id</td>
-          <td>Имя</td>
-          <td>Фамилия</td>
-          <td>Возраст</td>
+          <th>id</th>
+          <th>Имя</th>
+          <th>Фамилия</th>
+          <th>Возраст</th>
         </tr>
       </thead>
       <tbody>{rows}</tbody>

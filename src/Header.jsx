@@ -3,12 +3,37 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import navItems, { taskGroups } from "./navigation";
 import "./Header.css";
 
+const getGroupTitleForPath = (pathname) => {
+  const item = navItems.find(
+    (item) =>
+      item.path === pathname ||
+      (item.path === "/Jsxintro" && pathname === "/")
+  );
+  if (!item) return null;
+
+  const number = Number(item.number);
+  const group = taskGroups.find(
+    (group) => number >= group.from && number <= group.to
+  );
+
+  return group ? group.title : null;
+};
+
 function Header() {
   const location = useLocation();
   const navRef = useRef(null);
   const buttonRef = useRef(null);
   const panelRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openGroups, setOpenGroups] = useState(() => {
+    const activeGroup =
+      getGroupTitleForPath(location.pathname) ?? taskGroups[0]?.title;
+    return activeGroup ? { [activeGroup]: true } : {};
+  });
+
+  const toggleGroup = (title) => {
+    setOpenGroups((groups) => ({ ...groups, [title]: !groups[title] }));
+  };
 
   const isCurrentPath = (path) =>
     path === location.pathname ||
@@ -71,6 +96,16 @@ function Header() {
   // Закрываем меню при смене страницы.
   useEffect(() => {
     setMenuOpen(false);
+  }, [location.pathname]);
+
+  // Автоматически раскрываем подтему текущего задания.
+  useEffect(() => {
+    const activeGroup = getGroupTitleForPath(location.pathname);
+    if (!activeGroup) return;
+
+    setOpenGroups((groups) =>
+      groups[activeGroup] ? groups : { ...groups, [activeGroup]: true }
+    );
   }, [location.pathname]);
 
   // Закрытие по клику вне меню и по Escape.
@@ -199,51 +234,87 @@ function Header() {
             </div>
 
             <div className="task-menu-groups">
-              {taskGroups.map((group) => {
+              {taskGroups.map((group, groupIndex) => {
                 const groupItems = navItems.filter((item) => {
                   const number = Number(item.number);
                   return number >= group.from && number <= group.to;
                 });
+                const groupId = `task-menu-group-${groupIndex}`;
+                const isOpen = Boolean(openGroups[group.title]);
 
                 return (
-                  <section className="task-menu-group" key={group.title}>
-                    <div className="task-menu-group-head">
-                      <h3 className="task-menu-group-title">
+                  <section
+                    className={`task-menu-group${
+                      isOpen ? " is-open" : ""
+                    }`}
+                    key={group.title}
+                  >
+                    <button
+                      type="button"
+                      className="task-menu-group-toggle"
+                      aria-expanded={isOpen}
+                      aria-controls={groupId}
+                      onClick={() => toggleGroup(group.title)}
+                    >
+                      <span className="task-menu-group-title">
                         {group.title}
-                      </h3>
-                      <span className="task-menu-group-count">
-                        {groupItems.length}
                       </span>
-                    </div>
+                      <span className="task-menu-group-meta">
+                        <span className="task-menu-group-count">
+                          {groupItems.length}
+                        </span>
+                        <svg
+                          className="task-menu-group-chevron"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="m6 9 6 6 6-6"
+                            stroke="currentColor"
+                            strokeWidth="2.2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </button>
 
-                    {groupItems.length > 0 ? (
-                      <ul className="task-menu-list">
-                        {groupItems.map((item) => (
-                          <li key={item.path}>
-                            <NavLink
-                              to={item.path}
-                              onClick={() => setMenuOpen(false)}
-                              className={({ isActive }) =>
-                                `task-menu-link${
-                                  isActive || isCurrentPath(item.path)
-                                    ? " active"
-                                    : ""
-                                }`
-                              }
-                            >
-                              <span className="task-menu-name">
-                                {item.label}
-                              </span>
-                              <span className="task-menu-number">
-                                {item.number}
-                              </span>
-                            </NavLink>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p className="task-menu-empty">Пока нет заданий</p>
-                    )}
+                    <div
+                      id={groupId}
+                      className={`task-menu-group-body${
+                        isOpen ? " is-open" : ""
+                      }`}
+                    >
+                      {groupItems.length > 0 ? (
+                        <ul className="task-menu-list">
+                          {groupItems.map((item) => (
+                            <li key={item.path}>
+                              <NavLink
+                                to={item.path}
+                                onClick={() => setMenuOpen(false)}
+                                className={({ isActive }) =>
+                                  `task-menu-link${
+                                    isActive || isCurrentPath(item.path)
+                                      ? " active"
+                                      : ""
+                                  }`
+                                }
+                              >
+                                <span className="task-menu-name">
+                                  {item.label}
+                                </span>
+                                <span className="task-menu-number">
+                                  {item.number}
+                                </span>
+                              </NavLink>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="task-menu-empty">Пока нет заданий</p>
+                      )}
+                    </div>
                   </section>
                 );
               })}

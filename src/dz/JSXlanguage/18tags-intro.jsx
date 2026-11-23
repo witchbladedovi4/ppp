@@ -1,6 +1,6 @@
 const TagsIntro = () => {
   const str = "TagsIntro";
-  return <div>{str}</div>;
+  return <div className="demo-note">{str}</div>;
 };
 
 export default TagsIntro;

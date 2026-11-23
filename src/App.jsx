@@ -1,6 +1,11 @@
 import { useEffect } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-
+import {
+  BrowserRouter,
+  Link,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import Jsxintro from "./dz/JSXlanguage/07jsx-intro";
 import ReturningNested from "./dz/JSXlanguage/08returning-nested";
 import ReturningDown from "./dz/JSXlanguage/09returning-down";
@@ -21,7 +26,6 @@ import FormsRadio from "./dz/Forms/68forms-radio";
 import FormsDefaultValues from "./dz/Forms/69forms-default-values";
 import FormsArrayInputsBinding from "./dz/Forms/70-forms-array-inputs-binding";
 import FormsObjectInputsBinding from "./dz/Forms/71forms-object-inputs-binding";
-
 import Header from "./Header";
 import navItems from "./navigation";
 import DataIntro from "./dz/Data/72data-intro";
@@ -68,6 +72,26 @@ import FormsInputIntro from "./dz/Forms/56forms-input-intro";
 import FormsSelectIntro from "./dz/Forms/64forms-select-intro";
 import FormsSelectArray from "./dz/Forms/65forms-select-array";
 import FormsSelectValue from "./dz/Forms/66forms-select-value";
+import FormsInputOutput from "./dz/Forms/57forms-input-output";
+import FormsInputFunction from "./dz/Forms/58forms-input-function";
+import FormsInputSeveral from "./dz/Forms/59forms-input-several";
+import FormsData from "./dz/Forms/60forms-data";
+import FormsTextarea from "./dz/Forms/61forms-textarea";
+import CheckboxIntro from "./dz/Forms/62checkbox-intro";
+import CheckboxConditionalRendering from "./dz/Forms/63checkbox-conditional-rendering";
+import ComponentsIntro from "./dz/Components/78components-intro";
+import ComponentsUsing from "./dz/Components/79components-using";
+import ComponentsMultipleInstances from "./dz/Components/80components-multiple-instances";
+import ComponentsProps from "./dz/Components/81components-props";
+import ComponentsChild from "./dz/Components/82components-child";
+import ComponentsChildArray from "./dz/Components/83components-child-array";
+import ComponentsChildLoop from "./dz/Components/84components-child-loop";
+import ComponentsPassingStates from "./dz/Components/85components-passing-states";
+import ComponentsPassingId from "./dz/Components/86components-passing-id";
+import ComponentsChangingParentState from "./dz/Components/87components-changing-parent-state";
+import ComponentsEditingParentState from "./dz/Components/88components-editing-parent-state";
+import ComponentsEditingGrandparentState from "./dz/Components/89components-editing-grandparent-state";
+import ComponentsModesViaStates from "./dz/Components/90components-modes-via-states";
 
 const pageMeta = Object.fromEntries(navItems.map((item) => [item.path, item]));
 
@@ -228,23 +252,48 @@ function AppLayout() {
               <Route path="/IdGeneration" element={<IdGeneration />} />
               <Route path="/IdFunction" element={<IdFunction />} />
               <Route path="/IdFunctionUsing" element={<IdFunctionUsing />} />
-              <Route path="/IdFunctionWrongUsing" element={<IdFunctionWrongUsing />} />
+              <Route
+                path="/IdFunctionWrongUsing"
+                element={<IdFunctionWrongUsing />}
+              />
               {/* Уникальные ключи_END */}
 
               {/* Стейты */}
               <Route path="/StatesIntro" element={<StatesIntro />} />
               <Route path="/StatesUsing" element={<StatesUsing />} />
               <Route path="/StatesReactivity" element={<StatesReactivity />} />
-              <Route path="/StatesBooleanValue" element={<StatesBooleanValue />} />
+              <Route
+                path="/StatesBooleanValue"
+                element={<StatesBooleanValue />}
+              />
               <Route path="/StatesCounter" element={<StatesCounter />} />
               {/* Стейты_END */}
 
               {/* Формы */}
               <Route path="/FormsInputIntro" element={<FormsInputIntro />} />
+              <Route path="/FormsInputOutput" element={<FormsInputOutput />} />
+              <Route
+                path="/FormsInputFunction"
+                element={<FormsInputFunction />}
+              />
+              <Route
+                path="/FormsInputSeveral"
+                element={<FormsInputSeveral />}
+              />
+              <Route path="/FormsData" element={<FormsData />} />
+              <Route path="/FormsTextarea" element={<FormsTextarea />} />
+              <Route path="/FormsCheckbox" element={<CheckboxIntro />} />
+              <Route
+                path="/CheckboxConditionalRendering"
+                element={<CheckboxConditionalRendering />}
+              />
               <Route path="/FormsSelectIntro" element={<FormsSelectIntro />} />
               <Route path="/FormsSelectArray" element={<FormsSelectArray />} />
               <Route path="/FormsSelectValue" element={<FormsSelectValue />} />
-              <Route path="/FormsSelectArrayValue" element={<FormsSelectArrayValue />} />
+              <Route
+                path="/FormsSelectArrayValue"
+                element={<FormsSelectArrayValue />}
+              />
               <Route path="/FormsRadio" element={<FormsRadio />} />
               <Route
                 path="/FormsDefaultValues"
@@ -258,6 +307,9 @@ function AppLayout() {
                 path="/FormsObjectInputsBinding"
                 element={<FormsObjectInputsBinding />}
               />
+              {/* Формы_END */}
+
+              {/*  Данные*/}
               <Route path="/DataIntro" element={<DataIntro />} />
               <Route path="/DataArrayAdding" element={<DataArrayAdding />} />
               <Route
@@ -272,12 +324,78 @@ function AppLayout() {
                 path="/DataObjectsArrayOperations"
                 element={<DataObjectsArrayOperations />}
               />
-              {/* Формы_END */}
               <Route path="/DataShowing" element={<DataShowing />} />
+              {/* Данные_END */}
+
+              {/* Компоненты */}
+              <Route path="/ComponentsIntro" element={<ComponentsIntro />} />
+              <Route path="/ComponentsUsing" element={<ComponentsUsing />} />
+              <Route
+                path="/ComponentsMultipleInstances"
+                element={<ComponentsMultipleInstances />}
+              />
+              <Route path="/ComponentsProps" element={<ComponentsProps />} />
+              <Route path="/ComponentsChild" element={<ComponentsChild />} />
+              <Route
+                path="/ComponentsChildArray"
+                element={<ComponentsChildArray />}
+              />
+              <Route
+                path="/ComponentsChildLoop"
+                element={<ComponentsChildLoop />}
+              />
+              <Route
+                path="/ComponentsPassingStates"
+                element={<ComponentsPassingStates />}
+              />
+              <Route
+                path="/ComponentsPassingId"
+                element={<ComponentsPassingId />}
+              />
+              <Route
+                path="/ComponentsChangingParentState"
+                element={<ComponentsChangingParentState />}
+              />
+              <Route
+                path="/ComponentsEditingParentState"
+                element={<ComponentsEditingParentState />}
+              />
+              <Route
+                path="/ComponentsEditingGrandparentState"
+                element={<ComponentsEditingGrandparentState />}
+              />
+              <Route
+                path="/ComponentsModesViaStates"
+                element={<ComponentsModesViaStates />}
+              />
+              {/* Компоненты_END */}
             </Routes>
           </div>
         </section>
       </main>
+
+      <footer className="footer">
+        <div className="footer-inner">
+          <div className="footer-brand">
+            <span className="footer-mark" aria-hidden="true">
+              R
+            </span>
+            <div>
+              <strong>React Homework</strong>
+              <span>Практика JSX, условий, функций, стейтов и форм</span>
+            </div>
+          </div>
+
+          <div className="footer-meta">
+            <span>{navItems.length} заданий</span>
+            <span className="footer-divider" aria-hidden="true" />
+            <span>© {new Date().getFullYear()}</span>
+            <Link to="/" className="footer-link">
+              На главную ↑
+            </Link>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

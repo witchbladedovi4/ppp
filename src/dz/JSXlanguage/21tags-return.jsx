@@ -1,8 +1,6 @@
 const TagsReturn = () => {
-  const str = <main>TagsReturn</main>
-  return (
-    <div>{str}</div>
-  )
-}
+  const str = <main>TagsReturn</main>;
+  return <div className="demo-note">{str}</div>;
+};
 
-export default TagsReturn
+export default TagsReturn;
