@@ -19,19 +19,19 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
           cache: 'npm'
       
       - name: Install dependencies
         run: npm install
       
       - name: Build project
-        run: CI=false npm run build # CI=false игнорирует предупреждения
+        run: npm run build
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
+          path: ./dist
 
   deploy:
     environment:

@@ -72,6 +72,7 @@ const Mandelbrot = memo(function Mandelbrot({ iterations, onStats }) {
   return (
     <canvas
       ref={canvasRef}
+      className="fractal-canvas"
       width={WIDTH}
       height={HEIGHT}
     />
@@ -87,27 +88,27 @@ const HooksuseMemo = () => {
   const iterations = Math.max(1, Math.min(5000, parseInt(input, 10) || 1));
 
   return (
-    <div style={{ padding: 20 }}>
-      <label>
-        Итерации:{" "}
-        <input
-          type="number"
-          value={input}
-          min="1"
-          max="5000"
-          onChange={(e) => setInput(e.target.value)}
+    <div className="hooks-lab">
+      <div className="hooks-toolbar">
+        <label>
+          Итерации:{" "}
+          <input
+            type="number"
+            value={input}
+            min="1"
+            max="5000"
+            onChange={(e) => setInput(e.target.value)}
+          />
+        </label>
+        <button onClick={() => setCount(count + 1)}>
+          Нажатий: {count}
+        </button>
+      </div>
 
-        />
-      </label>{" "}
-      <button
-        onClick={() => setCount(count + 1)}
-
-      >
-        Нажатий: {count}
-      </button>
       <Mandelbrot iterations={iterations} onStats={setStats} />
+
       {stats && (
-        <p style={{ maxWidth: 800, lineHeight: 1.5 }}>
+        <p className="fractal-stats">
           Итог расчёта при {iterations} итерациях: множество Мандельброта
           занимает <b>{stats.insideCount}</b> пикселей из {stats.totalPixels} (
           {(stats.fraction * 100).toFixed(2)}% области построения). Оценка
