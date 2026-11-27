@@ -8,6 +8,7 @@ export const taskGroups = [
   { title: "Формы", from: 56, to: 71 },
   { title: "Данные", from: 72, to: 77 },
   { title: "Компоненты", from: 78, to: 90 },
+  { title: "Хуки", from: 200, to: 218 },
 ];
 
 const navItems = [
@@ -599,6 +600,20 @@ const navItems = [
     number: "90",
     lessonUrl:
       "https://code.mu/ru/javascript/framework/react/book/prime/components/modes-via-states/",
+  },
+  {
+    path: "/HooksuseMemo",
+    label: "HooksuseMemo",
+    number: "214",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/supreme/hooks/use-memo/#",
+  },
+  {
+    path: "/HooksApiMemo",
+    label: "Hooks Api Memo",
+    number: "215",
+    lessonUrl:
+      "https://code.mu/ru/javascript/framework/react/book/supreme/hooks/api-memo/",
   },
 ];
 

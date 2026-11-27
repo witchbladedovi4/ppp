@@ -92,6 +92,8 @@ import ComponentsChangingParentState from "./dz/Components/87components-changing
 import ComponentsEditingParentState from "./dz/Components/88components-editing-parent-state";
 import ComponentsEditingGrandparentState from "./dz/Components/89components-editing-grandparent-state";
 import ComponentsModesViaStates from "./dz/Components/90components-modes-via-states";
+import HooksuseMemo from "./dz/Hooks/214hooksuse-memo";
+import HooksApiMemo from "./dz/Hooks/215hooks-api-memo";
 
 const pageMeta = Object.fromEntries(navItems.map((item) => [item.path, item]));
 
@@ -367,6 +369,14 @@ function AppLayout() {
               <Route
                 path="/ComponentsModesViaStates"
                 element={<ComponentsModesViaStates />}
+              />
+              <Route
+                path="/HooksuseMemo"
+                element={<HooksuseMemo />}
+              />
+              <Route
+                path="/HooksApiMemo"
+                element={<HooksApiMemo />}
               />
               {/* Компоненты_END */}
             </Routes>
